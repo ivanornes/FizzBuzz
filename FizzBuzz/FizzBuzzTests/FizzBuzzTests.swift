@@ -11,7 +11,7 @@ import XCTest
 struct FizzBuzz {
     
     func range(startingAt number: Int, limit: Int) -> String {
-        return (1...10).reduce("", { result, index -> String in
+        return (number...limit).reduce("", { result, index -> String in
             return result + "\(index)"
         })
     }
@@ -86,5 +86,13 @@ class FizzBuzzTests: XCTestCase {
         let result = sut.range(startingAt: 1, limit: 10)
         
         XCTAssertEqual(result, "12345678910")
+    }
+    
+    func test_range_returnsTheNumbersFrom5To15() {
+        let sut = FizzBuzz()
+        
+        let result = sut.range(startingAt: 5, limit: 15)
+        
+        XCTAssertEqual(result, "56789101112131415")
     }
 }
