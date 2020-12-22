@@ -113,4 +113,16 @@ class FizzBuzzTests: XCTestCase {
         }
         XCTAssertEqual(result, expectedResult)
     }
+    
+    func test_processRage_returnsAStringFrom1To5() {
+        let sut = FizzBuzz()
+        
+        let result = sut.range(startingAt: 1, limit: 5)
+                        .compactMap { char -> String? in
+                            guard let number = Int("\(char)") else { return nil }
+                            return sut.process(number: number)
+                        }.joined()
+        
+        XCTAssertEqual(result, "12Fizz4Buzz")
+    }
 }
