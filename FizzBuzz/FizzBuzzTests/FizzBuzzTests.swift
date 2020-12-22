@@ -10,16 +10,9 @@ import XCTest
 
 struct FizzBuzz {
     func process(number: Int) -> String {
-        if number.isMultiple(of: 3) {
-            if number.isMultiple(of: 5) {
-                return "FizzBuzz"
-            }
-            return "Fizz"
-        } else if number.isMultiple(of: 5) {
-            return "Buzz"
-        } else {
-            return "\(number)"
-        }
+        return number.isMultiple(of: 3) ?
+               (number.isMultiple(of: 5) ? "FizzBuzz": "Fizz") :
+                number.isMultiple(of: 5) ? "Buzz" : "\(number)"
     }
 }
 
