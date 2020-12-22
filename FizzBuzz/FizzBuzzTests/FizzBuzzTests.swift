@@ -10,10 +10,6 @@ import XCTest
 
 struct FizzBuzz {
     
-    func range(startingAt number: Int, limit: Int) -> String {
-        return (number...limit).reduce("", { $0 + "\($1)" })
-    }
-    
     func process(number: Int) -> String {
         return number.isMultiple(of: 3) ?
                (number.isMultiple(of: 5) ? "FizzBuzz": "Fizz") :
@@ -79,49 +75,37 @@ class FizzBuzzTests: XCTestCase {
     }
     
     func test_range_returnsTheNumbersFrom1To10() {
-        let sut = FizzBuzz()
+        let result = 1...10
         
-        let result = sut.range(startingAt: 1, limit: 10)
-        
-        XCTAssertEqual(result, "12345678910")
+        XCTAssertEqual(Array(result), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     }
     
     func test_range_returnsTheNumbersFrom5To15() {
-        let sut = FizzBuzz()
+        let result = 5...15
         
-        let result = sut.range(startingAt: 5, limit: 15)
-        
-        XCTAssertEqual(result, "56789101112131415")
+        XCTAssertEqual(Array(result), [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
     }
     
     func test_range_returnsTheNumbersFromMinus5ToPlus5() {
-        let sut = FizzBuzz()
+        let result = -5...5
         
-        let result = sut.range(startingAt: -5, limit: 5)
-        
-        XCTAssertEqual(result, "-5-4-3-2-1012345")
+        XCTAssertEqual(Array(result), [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5])
     }
     
     func test_range_returnsTheNumbersFrom1To100() {
-        let sut = FizzBuzz()
+        let result = 1...100
         
-        let result = sut.range(startingAt: 1, limit: 100)
-        
-        var expectedResult = ""
+        var expectedResult: [Int] = []
         for i in 1...100 {
-            expectedResult += "\(i)"
+            expectedResult.append(i)
         }
-        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(Array(result), expectedResult)
     }
     
     func test_processRage_returnsAStringFrom1To5() {
         let sut = FizzBuzz()
         
-        let result = sut.range(startingAt: 1, limit: 5)
-                        .compactMap { char -> String? in
-                            guard let number = Int("\(char)") else { return nil }
-                            return sut.process(number: number)
-                        }.joined()
+        let result = (1...5).map { sut.process(number: $0) }.joined()
         
         XCTAssertEqual(result, "12Fizz4Buzz")
     }
