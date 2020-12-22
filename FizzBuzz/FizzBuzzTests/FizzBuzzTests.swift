@@ -8,15 +8,6 @@
 import XCTest
 @testable import FizzBuzz
 
-struct FizzBuzz {
-    
-    func process(number: Int) -> String {
-        return number.isMultiple(of: 3) ?
-               (number.isMultiple(of: 5) ? "FizzBuzz": "Fizz") :
-                number.isMultiple(of: 5) ? "Buzz" : "\(number)"
-    }
-}
-
 class FizzBuzzTests: XCTestCase {
     func test_process_numberThreeResultIsFizz() {
         let sut = FizzBuzz()
