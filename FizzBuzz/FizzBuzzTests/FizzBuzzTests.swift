@@ -95,4 +95,12 @@ class FizzBuzzTests: XCTestCase {
         
         XCTAssertEqual(result, "56789101112131415")
     }
+    
+    func test_range_returnsTheNumbersFromMinus5ToPlus5() {
+        let sut = FizzBuzz()
+        
+        let result = sut.range(startingAt: -5, limit: 5)
+        
+        XCTAssertEqual(result, "-5-4-3-2-1012345")
+    }
 }
