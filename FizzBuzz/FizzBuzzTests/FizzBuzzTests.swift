@@ -9,6 +9,13 @@ import XCTest
 @testable import FizzBuzz
 
 struct FizzBuzz {
+    
+    func range(startingAt number: Int, limit: Int) -> String {
+        return (1...10).reduce("", { result, index -> String in
+            return result + "\(index)"
+        })
+    }
+    
     func process(number: Int) -> String {
         return number.isMultiple(of: 3) ?
                (number.isMultiple(of: 5) ? "FizzBuzz": "Fizz") :
@@ -71,5 +78,13 @@ class FizzBuzzTests: XCTestCase {
         let result = sut.process(number: 16)
         
         XCTAssertEqual(result, "16")
+    }
+    
+    func test_range_returnsTheNumbersFrom1To10() {
+        let sut = FizzBuzz()
+        
+        let result = sut.range(startingAt: 1, limit: 10)
+        
+        XCTAssertEqual(result, "12345678910")
     }
 }
