@@ -55,6 +55,14 @@ class FizzBuzzTests: XCTestCase {
         
         XCTAssertEqual(result, "Buzz")
     }
+
+    func test_process_numberFourteenResultIs14() {
+        let sut = FizzBuzz()
+        
+        let result = sut.process(number: 14)
+        
+        XCTAssertEqual(result, "14")
+    }
     
     func test_process_numberFifteenResultIsFizzBuzz() {
         let sut = FizzBuzz()
@@ -62,5 +70,13 @@ class FizzBuzzTests: XCTestCase {
         let result = sut.process(number: 15)
         
         XCTAssertEqual(result, "FizzBuzz")
+    }
+    
+    func test_process_numberSixteenResultIs16() {
+        let sut = FizzBuzz()
+        
+        let result = sut.process(number: 16)
+        
+        XCTAssertEqual(result, "16")
     }
 }
