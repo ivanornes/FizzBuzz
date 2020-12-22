@@ -34,4 +34,12 @@ class FizzBuzzTests: XCTestCase {
         
         XCTAssertEqual(result, "1")
     }
+    
+    func test_process_numberFourResultIs4() {
+        let sut = FizzBuzz()
+        
+        let result = sut.process(number: 4)
+        
+        XCTAssertEqual(result, "4")
+    }
 }
