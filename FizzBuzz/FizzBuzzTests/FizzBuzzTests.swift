@@ -11,9 +11,7 @@ import XCTest
 struct FizzBuzz {
     
     func range(startingAt number: Int, limit: Int) -> String {
-        return (number...limit).reduce("", { result, index -> String in
-            return result + "\(index)"
-        })
+        return (number...limit).reduce("", { $0 + "\($1)" })
     }
     
     func process(number: Int) -> String {
