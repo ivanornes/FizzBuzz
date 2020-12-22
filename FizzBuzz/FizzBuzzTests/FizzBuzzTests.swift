@@ -20,13 +20,10 @@ struct FizzBuzz {
 
 class FizzBuzzTests: XCTestCase {
     func test_process_numberThreeResultIsFizz() {
-        // Given
         let sut = FizzBuzz()
         
-        // When
         let result = sut.process(number: 3)
         
-        // Then
         XCTAssertEqual(result, "Fizz")
     }
     
