@@ -10,7 +10,7 @@ import XCTest
 
 class FizzBuzzTests: XCTestCase {
     func test_process_numberThreeResultIsFizz() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = sut.process(number: 3)
         
@@ -18,7 +18,7 @@ class FizzBuzzTests: XCTestCase {
     }
     
     func test_process_numberOneResultIs1() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = sut.process(number: 1)
         
@@ -26,7 +26,7 @@ class FizzBuzzTests: XCTestCase {
     }
     
     func test_process_numberFourResultIs4() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = sut.process(number: 4)
         
@@ -34,7 +34,7 @@ class FizzBuzzTests: XCTestCase {
     }
     
     func test_process_numberFiveResultIsBuzz() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = sut.process(number: 5)
         
@@ -42,7 +42,7 @@ class FizzBuzzTests: XCTestCase {
     }
 
     func test_process_numberFourteenResultIs14() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = sut.process(number: 14)
         
@@ -50,7 +50,7 @@ class FizzBuzzTests: XCTestCase {
     }
     
     func test_process_numberFifteenResultIsFizzBuzz() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = sut.process(number: 15)
         
@@ -58,7 +58,7 @@ class FizzBuzzTests: XCTestCase {
     }
     
     func test_process_numberSixteenResultIs16() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = sut.process(number: 16)
         
@@ -94,7 +94,7 @@ class FizzBuzzTests: XCTestCase {
     }
     
     func test_processRage_returnsAStringFrom1To5() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = (1...5).map { sut.process(number: $0) }.joined()
         
@@ -102,10 +102,16 @@ class FizzBuzzTests: XCTestCase {
     }
     
     func test_processRage_returnsAStringFrom14To16() {
-        let sut = FizzBuzz()
+        let sut = makeSut()
         
         let result = (14...16).map { sut.process(number: $0) }.joined()
         
         XCTAssertEqual(result, "14FizzBuzz16")
+    }
+    
+    // MARK: - Helper
+    
+    func makeSut() -> FizzBuzzable {
+        return FizzBuzz()
     }
 }

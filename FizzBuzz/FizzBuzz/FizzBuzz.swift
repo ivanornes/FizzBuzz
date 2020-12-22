@@ -7,7 +7,11 @@
 
 import Foundation
 
-public struct FizzBuzz {
+public protocol FizzBuzzable {
+    func process(number: Int) -> String
+}
+
+public struct FizzBuzz: FizzBuzzable {
     public func process(number: Int) -> String {
         return number.isMultiple(of: 3) ?
                (number.isMultiple(of: 5) ? "FizzBuzz": "Fizz") :
