@@ -103,4 +103,16 @@ class FizzBuzzTests: XCTestCase {
         
         XCTAssertEqual(result, "-5-4-3-2-1012345")
     }
+    
+    func test_range_returnsTheNumbersFrom1To100() {
+        let sut = FizzBuzz()
+        
+        let result = sut.range(startingAt: 1, limit: 100)
+        
+        var expectedResult = ""
+        for i in 1...100 {
+            expectedResult += "\(i)"
+        }
+        XCTAssertEqual(result, expectedResult)
+    }
 }
