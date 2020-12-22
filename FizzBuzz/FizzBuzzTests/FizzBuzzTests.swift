@@ -109,4 +109,12 @@ class FizzBuzzTests: XCTestCase {
         
         XCTAssertEqual(result, "12Fizz4Buzz")
     }
+    
+    func test_processRage_returnsAStringFrom14To16() {
+        let sut = FizzBuzz()
+        
+        let result = (14...16).map { sut.process(number: $0) }.joined()
+        
+        XCTAssertEqual(result, "14FizzBuzz16")
+    }
 }
