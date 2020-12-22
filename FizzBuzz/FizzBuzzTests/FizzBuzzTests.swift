@@ -12,6 +12,8 @@ struct FizzBuzz {
     func process(number: Int) -> String {
         if number.isMultiple(of: 3) {
             return "Fizz"
+        } else if number.isMultiple(of: 5) {
+            return "Buzz"
         } else {
             return "\(number)"
         }
@@ -41,5 +43,13 @@ class FizzBuzzTests: XCTestCase {
         let result = sut.process(number: 4)
         
         XCTAssertEqual(result, "4")
+    }
+    
+    func test_process_numberFiveResultIsBuzz() {
+        let sut = FizzBuzz()
+        
+        let result = sut.process(number: 5)
+        
+        XCTAssertEqual(result, "Buzz")
     }
 }
