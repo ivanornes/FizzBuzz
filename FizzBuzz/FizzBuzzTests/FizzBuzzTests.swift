@@ -10,7 +10,11 @@ import XCTest
 
 struct FizzBuzz {
     func process(number: Int) -> String {
-        return "Fizz"
+        if number.isMultiple(of: 3) {
+            return "Fizz"
+        } else {
+            return "\(number)"
+        }
     }
 }
 
@@ -24,5 +28,13 @@ class FizzBuzzTests: XCTestCase {
         
         // Then
         XCTAssertEqual(result, "Fizz")
+    }
+    
+    func test_process_numberOneResultIs1() {
+        let sut = FizzBuzz()
+        
+        let result = sut.process(number: 1)
+        
+        XCTAssertEqual(result, "1")
     }
 }
