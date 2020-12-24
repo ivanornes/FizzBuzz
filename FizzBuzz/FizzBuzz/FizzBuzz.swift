@@ -13,8 +13,11 @@ public protocol FizzBuzzable {
 
 public struct FizzBuzz: FizzBuzzable {
     public func process(number: Int) -> String {
-        return number.isMultiple(of: 3) ?
-               (number.isMultiple(of: 5) ? "FizzBuzz": "Fizz") :
-                number.isMultiple(of: 5) ? "Buzz" : "\(number)"
+        switch (number.isMultiple(of: 3), number.isMultiple(of: 5)) {
+        case (false, false): return "\(number)"
+        case (false, true): return "Buzz"
+        case (true, false): return "Fizz"
+        case (true, true): return "FizzBuzz"
+        }
     }
 }
