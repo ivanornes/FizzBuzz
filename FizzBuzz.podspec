@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/ivanornes/FizzBuzz"
   s.license          = { :type => 'MIT', :file => 'MIT-LICENSE.txt' }
   s.author           = { "Ivan Ornes" => "ivan.ornes@gmail.com" }
-  s.source           = { :git => "https://github.com/ivanornes/FizzBuzz.git", :tag => s.version }
+  s.source           = { :git => "https://github.com/ivanornes/FizzBuzz.git", :tag => "v1.0" }
   s.social_media_url = 'https://twitter.com/ivanornes'
 
   s.platform     = :ios, '14.0'
