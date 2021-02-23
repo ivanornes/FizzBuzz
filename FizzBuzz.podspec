@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "FizzBuzz"
-  s.version          = "v1.0"
+  s.version          = "1.0"
   s.summary          = "The open source FizzBuzz Swift implementation"
   s.homepage         = "https://github.com/ivanornes/FizzBuzz"
   s.license          = 'MIT'
@@ -11,8 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '14.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes'
-  s.resources = 'Pod/Assets/*'
+  s.source_files = 'FizzBuzz/FizzBuzz'
 
   s.module_name = 'FizzBuzz'
 end
