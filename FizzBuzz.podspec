@@ -10,8 +10,9 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '14.0'
   s.requires_arc = true
-
-  s.source_files = 'FizzBuzz/FizzBuzz'
+  s.swift_version = '5.0'
+ 
+ s.source_files = 'FizzBuzz/FizzBuzz'
 
   s.module_name = 'FizzBuzz'
 end
