@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "1.0"
   s.summary          = "The open source FizzBuzz Swift implementation"
   s.homepage         = "https://github.com/ivanornes/FizzBuzz"
-  s.license          = 'MIT'
+  s.license          = { :type => 'MIT', :file => 'MIT-LICENSE.txt' }
   s.author           = { "Ivan Ornes" => "ivan.ornes@gmail.com" }
   s.source           = { :git => "https://github.com/ivanornes/FizzBuzz.git", :tag => s.version }
   s.social_media_url = 'https://twitter.com/ivanornes'
