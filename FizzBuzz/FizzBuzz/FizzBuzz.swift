@@ -12,6 +12,9 @@ public protocol FizzBuzzable {
 }
 
 public struct FizzBuzz: FizzBuzzable {
+    
+    public init() {}
+    
     public func process(number: Int) -> String {
         switch (number.isMultiple(of: 3), number.isMultiple(of: 5)) {
         case (false, false): return "\(number)"
