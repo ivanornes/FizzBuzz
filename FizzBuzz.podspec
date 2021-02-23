@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "FizzBuzz"
-  s.version          = "1.0"
+  s.version          = "v1.0"
   s.summary          = "The open source FizzBuzz Swift implementation"
   s.homepage         = "https://github.com/ivanornes/FizzBuzz"
   s.license          = 'MIT'
