@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/ivanornes/FizzBuzz.git", :tag => s.version }
   s.social_media_url = 'https://twitter.com/ivanornes'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '14.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
